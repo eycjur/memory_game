@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 
-import turnReducer from './turnSlice';
-import cardReducer from './cardsSlice';
-import scoreReducer from './scoreSlice';
+import turnReducer, { TurnState } from "./turnSlice";
+import cardReducer, { CardsState } from "./cardsSlice";
+import scoreReducer, { ScoreState } from "./scoreSlice";
+
+export interface RootState {
+  turn: TurnState;
+  cards: CardsState;
+  score: ScoreState;
+}
 
 export const store = configureStore({
   reducer: {

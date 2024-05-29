@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface ScoreState {
+export interface ScoreState {
   human: number;
   ai: number;
 }
@@ -11,7 +11,7 @@ const initialState: ScoreState = {
 };
 
 const scoreSlice = createSlice({
-  name: 'score',
+  name: "score",
   initialState,
   reducers: {
     addScoreHuman: (state, action: PayloadAction<number>) => {

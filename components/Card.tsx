@@ -1,8 +1,7 @@
-import React from 'react';
-import { Image, StyleSheet, Pressable, View } from 'react-native';
-import ReactCardFlip from 'react-card-flip';
-import { ImageSourcePropType } from 'react-native';
-import FlipCard from 'react-native-flip-card'
+import React from "react";
+import { Image, StyleSheet, Pressable, View } from "react-native";
+import { ImageSourcePropType } from "react-native";
+import FlipCard from "react-native-flip-card";
 
 interface CardProps {
   image: ImageSourcePropType;
@@ -18,19 +17,18 @@ const Card: React.FC<CardProps> = ({ image, onPress, isFlipped }) => {
   */
   return (
     <View style={styles.cardContainer}>
-      <FlipCard flip={isFlipped} flipHorizontal={true} flipVertical={false} clickable={false}>
+      <FlipCard
+        flip={isFlipped}
+        flipHorizontal={true}
+        flipVertical={false}
+        clickable={false}
+      >
         <Pressable style={styles.card} onPress={onPress} key="front">
-          <Image
-            style={styles.image}
-            source={require('../assets/card-back.png')}
-          />
+          <Image style={styles.image} source={require("../assets/card-back.png")} />
         </Pressable>
 
         <Pressable style={styles.card} onPress={onPress} key="back">
-          <Image
-            style={styles.image}
-            source={image}
-          />
+          <Image style={styles.image} source={image} />
         </Pressable>
       </FlipCard>
     </View>
@@ -44,15 +42,15 @@ const styles = StyleSheet.create({
     height: 108,
   },
   card: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 10,
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     borderRadius: 10,
   },
 });

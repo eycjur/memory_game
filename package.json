@@ -7,6 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "lint": "eslint --fix '**/*.{ts,tsx}'",
+    "format": "prettier --write '**/*.{ts,tsx}'",
+    "pre-commit": "pre-commit run --all-files",
     "generateImage": "npx tsc scripts/generateImages.ts || true && node scripts/generateImages.js"
   },
   "dependencies": {
@@ -21,6 +24,7 @@
     "expo-web-browser": "~13.0.3",
     "lodash": "^4.17.21",
     "openai": "^4.47.1",
+    "prettier": "^3.2.5",
     "react": "18.2.0",
     "react-card-flip": "^1.2.2",
     "react-dom": "18.2.0",
@@ -32,8 +36,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@eslint/compat": "^1.0.1",
+    "@eslint/js": "^9.3.0",
     "@types/react": "~18.2.45",
-    "typescript": "~5.3.3"
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.3.0",
+    "typescript": "~5.3.3",
+    "typescript-eslint": "^7.11.0"
   },
   "private": true
 }

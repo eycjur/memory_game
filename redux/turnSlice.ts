@@ -1,15 +1,15 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface TurnState {
+export interface TurnState {
   isAITurn: boolean;
 }
 
 const initialState: TurnState = {
-  isAITurn: false
+  isAITurn: false,
 };
 
 const turnSlice = createSlice({
-  name: 'turn',
+  name: "turn",
   initialState,
   reducers: {
     reverseTurn: (state) => {
