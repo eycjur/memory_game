@@ -8,12 +8,10 @@ import { promises as fsPromises } from "fs";
 import { OpenAI } from "openai";
 import { mkdir, access } from "fs/promises";
 import { createInterface } from "readline";
-import { config } from "dotenv";
-
-config({ path: ".env" });
+import { EXPO_PUBLIC_OPENAI_API_KEY } from "../const";
 
 const openai = new OpenAI({
-  apiKey: process.env.EXPO_PUBLIC_OPENAI_API_KEY,
+  apiKey: EXPO_PUBLIC_OPENAI_API_KEY,
 });
 
 const rl = createInterface({
@@ -47,6 +45,7 @@ function askQuestion(query: string): Promise<string> {
 async function main() {
   const prompt = await askQuestion("Enter the image prompt: ");
   const name = await askQuestion("Enter the name to save images: ");
+  const num = await askQuestion("Enter the number of images to generate: ");
   const directory = `assets/${name}`;
 
   try {
@@ -56,7 +55,7 @@ async function main() {
   }
 
   // 並列で処理するとrate limitを超えるので、あえてawaitを使って順番に処理する
-  for (let i = 0; i < 32; i++) {
+  for (let i = 0; i < parseInt(num); i++) {
     console.log(`Generating image ${i + 1}`);
 
     let imageUrl;
