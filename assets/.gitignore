@@ -1,0 +1,8 @@
+*.png
+
+!sample/*.png
+!adaptive-icon.png
+!card-back.png
+!favicon.png
+!icon.png
+!splash.png

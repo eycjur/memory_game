@@ -2,39 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ImageSourcePropType } from "react-native";
 
 // 動的importができないため、画像のパスを配列で持つ
-const images = [
-  require("../assets/cats/0.png"),
-  require("../assets/cats/1.png"),
-  require("../assets/cats/2.png"),
-  require("../assets/cats/3.png"),
-  require("../assets/cats/4.png"),
-  require("../assets/cats/5.png"),
-  require("../assets/cats/6.png"),
-  require("../assets/cats/7.png"),
-  require("../assets/cats/8.png"),
-  require("../assets/cats/9.png"),
-  require("../assets/cats/10.png"),
-  require("../assets/cats/11.png"),
-  require("../assets/cats/12.png"),
-  require("../assets/cats/13.png"),
-  require("../assets/cats/14.png"),
-  require("../assets/cats/15.png"),
-  require("../assets/cats/16.png"),
-  require("../assets/cats/17.png"),
-  require("../assets/cats/18.png"),
-  require("../assets/cats/19.png"),
-  require("../assets/cats/20.png"),
-  require("../assets/cats/21.png"),
-  require("../assets/cats/22.png"),
-  require("../assets/cats/23.png"),
-  require("../assets/cats/24.png"),
-  require("../assets/cats/25.png"),
-  require("../assets/cats/26.png"),
-  require("../assets/cats/27.png"),
-  require("../assets/cats/28.png"),
-  require("../assets/cats/29.png"),
-  require("../assets/cats/30.png"),
-  require("../assets/cats/31.png"),
+const IMAGES = [
+  require("../assets/sample/0.png"),
+  require("../assets/sample/1.png"),
+  require("../assets/sample/2.png"),
+  require("../assets/sample/3.png"),
+  require("../assets/sample/4.png"),
+  require("../assets/sample/5.png"),
+  require("../assets/sample/6.png"),
+  require("../assets/sample/7.png"),
 ];
 
 export interface CardType {
@@ -64,7 +40,7 @@ const generateCards = (num: number): CardType[] => {
     cards.push({
       id: i,
       image_id: i,
-      image: images[i],
+      image: IMAGES[i],
       selected: false,
       finished: false,
       opened: false,
@@ -72,7 +48,7 @@ const generateCards = (num: number): CardType[] => {
     cards.push({
       id: i + num_unique,
       image_id: i,
-      image: images[i],
+      image: IMAGES[i],
       selected: false,
       finished: false,
       opened: false,

@@ -54,3 +54,10 @@ npm run ios
 
 2. ターミナル上に表示されるQRコードをスキャンし、Expo Goアプリを使用してアプリを実行します。
 3. シミュレーターを使用してアプリを実行する場合は、Xcodeを使用してプロジェクトを開きます。
+
+### 画像の作成
+
+```bash
+npm run generateImage
+# redux/cardsSlice.tsのカード画像のパスを更新します。
+```

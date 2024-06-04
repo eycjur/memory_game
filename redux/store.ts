@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import turnReducer, { TurnState } from "./turnSlice";
-import cardReducer, { CardsState } from "./cardsSlice";
-import scoreReducer, { ScoreState } from "./scoreSlice";
+import turnReducer, { TurnState } from "@/redux/turnSlice";
+import cardReducer, { CardsState } from "@/redux/cardsSlice";
+import scoreReducer, { ScoreState } from "@/redux/scoreSlice";
 
 export interface RootState {
   turn: TurnState;
